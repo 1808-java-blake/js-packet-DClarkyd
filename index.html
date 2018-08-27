@@ -31,33 +31,33 @@
     </div>
     <p id="helloWorld" onclick="randomizeColor()">Hello, World!</p>
     <div>
-      <table id="mytab1">
+      <table id="myTab1">
         <tr>
           <th>Name</th>
           <th>Department</th>
         </tr>
         <tr>
-          <td class="empName" onmouseover="getInvisible(1)" onmouseout="getInvisible(1)">John</td>
+          <td class="empName" onmouseover="getInvisible(0)" onmouseout="getInvisible(1)">John</td>
           <td>Sales</td>
         </tr>
         <tr>
-          <td class="empName" onmouseover="getInvisible(2)" onmouseout="getInvisible(2)">Amy</td>
+          <td class="empName" onmouseover="getInvisible(1)" onmouseout="getInvisible(2)">Amy</td>
           <td>Finance</td>
         </tr>
         <tr>
-          <td class="empName" onmouseover="getInvisible(3)" onmouseout="getInvisible(3)">Austin</td>
+          <td class="empName" onmouseover="getInvisible(2)" onmouseout="getInvisible(3)">Austin</td>
           <td>Sales</td>
         </tr>
         <tr>
-          <td class="empName" onmouseover="getInvisible(4)" onmouseout="getInvisible(4)">Katie</td>
+          <td class="empName" onmouseover="getInvisible(3)" onmouseout="getInvisible(4)">Katie</td>
           <td>Marketing</td>
         </tr>
         <tr>
-          <td class="empName" onmouseover="getInvisible(5)" onmouseout="getInvisible(5)">Courtney</td>
+          <td class="empName" onmouseover="getInvisible(4)" onmouseout="getInvisible(5)">Courtney</td>
           <td>Sales</td>
         </tr>
         <tr>
-          <td class="empName" onmouseover="getInvisible(6)" onmouseout="getInvisible(6)">Scout</td>
+          <td class="empName" onmouseover="getInvisible(5)" onmouseout="getInvisible(6)">Scout</td>
           <td>Sales</td>
         </tr>
       </table>
@@ -246,13 +246,15 @@
     // 	Hide the name if shown.
     // 	Show the name if hidden.
     function getInvisible(row) {
-      table = document.getElementById("mytab1").rows;
-      if (table[row].style.display === "none") {
+      // table = document.getElementById("myTab1").rows;
+      rows = document.getElementById("myTab1").getElementsByClassName("empName")
+      console.log(rows[row].innerHTML)
+      if (rows[row].style.display === "none") {
 
-        table[row].style.display = "block";
+       rows[row].style.display = "block";
       } else {
 
-        table[row].style.display = "none";
+        rows[row].style.display = "none";
 
       }
 
